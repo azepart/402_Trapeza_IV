@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/idb@5/build/iife/index-min.js"></script>
+    <title>hangman</title>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h1>Hangman</h1>
+        </div>
+        <canvas id="canvas" width="600" height="600" hidden="true"></canvas>
+        <div class="login" id="login">
+            <a>Имя игрока:</a>
+            <input type="text" id="name" onkeydown="if (event.keyCode == 13) document.getElementById('start').click()">
+            <button id="start">Начать</button>
+        </div>
+        <div class="game-menu" id="game-menu">
+            <a>Введите букву:</a>
+            <input type="text" id="enter-letter" onkeydown="if (event.keyCode == 13) document.getElementById('btn-enter-letter').click()">
+            <button id="btn-enter-letter">Ввести</button>
+            <button id="restart-game">Начать заново</button>
+            <button id="show-games">Список игр</button><br>
+            <div class="game-menu-down">
+                <a>Введите id для повтора:</a>
+                <input type="text" id="id-select-game" onkeydown="if (event.keyCode == 13) document.getElementById('start-replay').click()">
+                <button id="start-replay">Показать сыгранную игру</button>
+                <div>
+                    <table border="1" id="table" align="center">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Controller.js" type="module"></script>
+</body>
+</html>
